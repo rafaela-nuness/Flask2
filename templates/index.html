@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Fluxo · Decisões com dados{% endblock %}
+{% block content %}
+<section class="hero page-width">
+  <div class="hero-copy">
+    <p class="eyebrow">ANÁLISE DE VENDAS · FLASK</p>
+    <h1>Transformar dados<br><em>em decisões.</em></h1>
+    <p class="lead">Uma leitura mais clara do que está acontecendo nas vendas para escolher o próximo movimento com confiança.</p>
+    <a class="button" href="{{ url_for('dashboard') }}">Explorar dashboard <span>→</span></a>
+  </div>
+  <div class="hero-visual" aria-label="Gráfico ilustrativo de crescimento das vendas">
+    <div class="visual-top"><div class="chart-label">visão geral <span>/ agosto 2026</span></div><span class="live-dot">dados ativos</span></div>
+    <div class="chart-stage"><div class="bars"><i style="height:34%"><span class="bar-value">R$ 7,2k</span><small>01</small></i><i style="height:49%"><span class="bar-value">R$ 9,7k</span><small>02</small></i><i style="height:42%"><span class="bar-value">R$ 8,4k</span><small>03</small></i><i style="height:68%"><span class="bar-value">R$ 13,2k</span><small>04</small></i><i style="height:57%"><span class="bar-value">R$ 11,1k</span><small>05</small></i><i class="active" style="height:88%"><span class="bar-value">+28,4%</span><small>agora</small></i></div></div>
+    <div class="signal"><span>↗️</span> 28,4% <small>ritmo de faturamento</small></div>
+  </div>
+</section>
+<section class="intro-band">
+  <div class="page-width intro-grid">
+    <p class="eyebrow">O PROBLEMA</p>
+    <h2>Números dispersos não contam a história inteira.</h2>
+    <p>O Fluxo reúne vendas, produtos, clientes, regiões e horários em uma única visão. Assim, a empresa encontra padrões e transforma informação bruta em uma decisão possível.</p>
+  </div>
+</section>
+<section class="page-width steps">
+  <p class="eyebrow">COMO FUNCIONA</p>
+  <div class="step-grid"><div><b>01</b><strong>Dados</strong><span>Vendas fictícias organizadas em Python.</span></div><div><b>02</b><strong>Análise</strong><span>Agregações revelam o que merece atenção.</span></div><div><b>03</b><strong>Decisão</strong><span>Indicadores dão direção para o próximo período.</span></div></div>
+</section>
+{% endblock %}

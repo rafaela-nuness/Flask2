@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Dados de vendas · Fluxo{% endblock %}
+{% block content %}
+<section class="page-width dashboard-head"><div><p class="eyebrow">FONTE DOS INDICADORES</p><h1>Dados de vendas</h1><p>Os registros fictícios usados para demonstrar o processamento em Flask.</p></div><a class="button secondary" href="{{ url_for('dashboard') }}">Voltar ao dashboard <span>→</span></a></section>
+<section class="page-width table-wrap"><table><thead><tr><th>ID</th><th>Data</th><th>Produto</th><th>Categoria</th><th>Qtd.</th><th>Valor</th><th>Cliente</th><th>Região</th><th>Horário</th></tr></thead><tbody>{% for venda in vendas %}<tr><td>#{{ '%02d'|format(venda.id_venda) }}</td><td>{{ venda.data[8:] }}/08/2026</td><td><strong>{{ venda.produto }}</strong></td><td>{{ venda.categoria }}</td><td>{{ venda.quantidade }}</td><td>R$ {{ '{:,.2f}'.format(venda.valor).replace(',', 'X').replace('.', ',').replace('X', '.') }}</td><td>{{ venda.cliente }}</td><td>{{ venda.regiao }}</td><td>{{ venda.horario }}</td></tr>{% endfor %}</tbody></table></section>
+{% endblock %}

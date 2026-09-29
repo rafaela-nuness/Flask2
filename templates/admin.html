@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Área administrativa · Fluxo{% endblock %}
+{% block content %}
+<section class="page-width dashboard-head admin-heading"><div><p class="eyebrow">GESTÃO DE DADOS</p><h1>Adicionar uma venda</h1><p>Registre uma nova compra e veja os indicadores serem recalculados automaticamente.</p></div><div class="admin-kicker"><span class="live-dot">●</span> base conectada<br><strong>{{ analise.quantidade_vendas }} registros</strong></div></section>
+<section class="page-width admin-layout">
+  <form class="panel sales-form" method="post">
+    {% if mensagem %}<div class="form-success">✓ {{ mensagem }}</div>{% endif %}
+    <div class="form-section"><p class="eyebrow">01 · PRODUTO</p><div class="form-grid"><label class="wide">Nome do produto<input name="produto" placeholder="Ex.: Fone de ouvido" required></label><label>Categoria<select name="categoria"><option>Tecnologia</option><option>Acessórios</option><option>Casa</option><option>Escritório</option></select></label><label>Quantidade<input name="quantidade" type="number" min="1" placeholder="1" required></label><label>Valor total (R$)<input name="valor" inputmode="decimal" placeholder="0,00" required></label></div></div>
+    <div class="form-section"><p class="eyebrow">02 · CONTEXTO DA VENDA</p><div class="form-grid"><label>Data<input name="data" type="date" value="2026-08-06" required></label><label>Horário<input name="horario" type="time" value="10:00" required></label><label>Região<select name="regiao"><option>Sudeste</option><option>Sul</option><option>Nordeste</option><option>Centro-Oeste</option><option>Norte</option></select></label><label>Cliente (opcional)<input name="cliente" placeholder="Nome do cliente"></label></div></div>
+    <button class="button form-submit" type="submit">Salvar venda <span>→</span></button>
+  </form>
+  <aside class="admin-side"><div class="side-mark">+</div><p class="eyebrow">APÓS SALVAR</p><h2>Os dados viram uma leitura.</h2><p>O novo registro entra nos rankings, no faturamento e na análise de produto automaticamente.</p><a href="{{ url_for('dashboard') }}">Ver dashboard atualizado <span>→</span></a></aside>
+</section>
+{% endblock %}
